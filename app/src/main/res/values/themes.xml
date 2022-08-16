@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ReminderApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/buttonend</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,23 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
+
+
+    <style name="Theme.App" parent="Theme.MaterialComponents">
+        ...
+        <item name="colorPrimary">@color/buttonend</item>
+        <item name="colorOnPrimary">@color/purple_200</item>
+        <item name="cornerRadius">15dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="cornerSize">34dp</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppCompat.Button</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.LargeComponent
+        </item>
+    </style>
+
+
 </resources>

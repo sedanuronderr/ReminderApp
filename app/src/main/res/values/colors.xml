@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="mavi">#00C7F8</color>
+    <color name="koyumavi">#4380F8</color>
+      <color name="acık">#4A52FF</color>
+    <color name="a">#0094FF</color>
+    <color name="buttonend">#1AAAEB</color>
+
 </resources>

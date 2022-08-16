@@ -3,7 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/button.xml" value="0.102" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/color.xml" value="0.2585" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/color2.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_ellipse.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_ellipse1.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_ellipse2.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_h_.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_kol.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_parmak1.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_parmak2.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_su1.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_su2.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_union.xml" value="0.222" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_vector.xml" value="0.1945" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/ic_water.xml" value="0.1675" />
+        <entry key="..\:/ReminderApp/app/src/main/res/drawable/left.xml" value="0.2595" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_gender.xml" value="0.1" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_heigh.xml" value="0.25416666666666665" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_hi.xml" value="0.24728260869565216" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_wake_up_male.xml" value="0.2" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_weigh_male.xml" value="0.264" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_weight_female.xml" value="0.1" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_weight_male.xml" value="0.1" />
       </map>
     </option>
   </component>

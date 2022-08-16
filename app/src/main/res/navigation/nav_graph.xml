@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hiFragment">
+
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.seda.reminderapp.fragment.GenderFragment"
+        android:label="fragment_gender"
+        tools:layout="@layout/fragment_gender" >
+        <action
+            android:id="@+id/action_genderFragment_to_weighMaleFragment"
+            app:destination="@id/weighMaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hiFragment"
+        android:name="com.seda.reminderapp.fragment.HiFragment"
+        android:label="fragment_hi"
+        tools:layout="@layout/fragment_hi" >
+        <action
+            android:id="@+id/action_hiFragment_to_genderFragment"
+            app:destination="@id/genderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weighMaleFragment"
+        android:name="com.seda.reminderapp.fragment.WeightMaleFragment"
+        android:label="fragment_weigh_male"
+        tools:layout="@layout/fragment_weight_male" >
+        <action
+            android:id="@+id/action_weighMaleFragment_to_weightFemaleFragment"
+            app:destination="@id/weightFemaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weightFemaleFragment"
+        android:name="com.seda.reminderapp.fragment.WeightFemaleFragment"
+        android:label="fragment_weight_female"
+        tools:layout="@layout/fragment_weight_female" >
+        <action
+            android:id="@+id/action_weightFemaleFragment_to_wakeUpMaleFragment"
+            app:destination="@id/wakeUpMaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wakeUpMaleFragment"
+        android:name="com.seda.reminderapp.fragment.WakeUpMaleFragment"
+        android:label="fragment_wake_up_male"
+        tools:layout="@layout/fragment_wake_up_male" />
+</navigation>
