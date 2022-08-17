@@ -8,14 +8,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.seda.reminderapp.R
 import com.seda.reminderapp.databinding.FragmentGenderBinding
-import com.seda.reminderapp.databinding.FragmentHiBinding
 
 
 class GenderFragment : Fragment() {
     private lateinit var  binding: FragmentGenderBinding
+    var girl= 0
+    var male =1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,10 +48,68 @@ class GenderFragment : Fragment() {
 
         binding.kelime.paint.setShader(textShader)
 
-        binding.nextbutton.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.weighMaleFragment)
-        }
+
+binding.back.setOnClickListener {
+    Navigation.findNavController(it).navigate(R.id.action_genderFragment_to_hiFragment)
+
+}
+        melabutton()
+        femalebutton()
     }
+
+    fun melabutton(){
+
+        binding.maleButton.setOnCheckedChangeListener(object :View.OnClickListener,CompoundButton.OnCheckedChangeListener{
+            override fun onClick(p0: View?) {
+
+            }
+
+            override fun onCheckedChanged(p0: CompoundButton?, isChecked: Boolean) {
+                if (isChecked) {
+
+                    binding.femaleButton.isChecked =false
+                    binding.nextbutton.setOnClickListener {
+                        Navigation.findNavController(it).navigate(R.id.weightMaleFragment)
+                    }
+
+                } else {
+
+                }
+            }
+
+        })
+
+    }
+    fun femalebutton(){
+
+        binding.femaleButton.setOnCheckedChangeListener(object :View.OnClickListener,CompoundButton.OnCheckedChangeListener{
+
+
+            override fun onClick(p0: View?) {
+
+            }
+
+            override fun onCheckedChanged(p0: CompoundButton?, isChecked: Boolean) {
+                if (isChecked) {
+
+                    binding.maleButton.isChecked =false
+                    binding.nextbutton.setOnClickListener {
+                        Navigation.findNavController(it).navigate(R.id.weightFemaleFragment)
+
+                    }
+
+                } else {
+
+                }
+            }
+
+        })
+    }
+
+
+
+
+
 
 
 

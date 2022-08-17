@@ -14,70 +14,52 @@
         android:id="@+id/kelime"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="220dp"
         android:gravity="center"
         android:text="Choose your gender"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="0dp"
         android:layout_height="130dp"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="70dp"
         android:src="@drawable/ic_gender"
+        app:layout_constraintBottom_toBottomOf="@+id/kelime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="168dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="56dp"
-        android:src="@drawable/ic_male"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kelime" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="168dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="17dp"
-        android:src="@drawable/ic_female"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kelime" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="62dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="0dp"
         android:text="Male"
         android:textColor="#1BAEEE"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/maleButton"
+        app:layout_constraintStart_toStartOf="@+id/maleButton"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="219dp"
         android:text="Female"
         android:textColor="#FF4593"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/femaleButton" />
 
     <Button
         android:id="@+id/nextbutton"
@@ -96,16 +78,48 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="51dp"
+
+        android:layout_marginBottom="27dp"
         android:background="@drawable/button"
         android:drawableLeft="@drawable/left"
-
         android:textSize="24sp"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nextbutton"
-        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ToggleButton
+        android:id="@+id/maleButton"
+        android:layout_width="141dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/clickbutton"
+        android:checked="false"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kelime" />
+
+    <ToggleButton
+        android:id="@+id/femaleButton"
+        android:layout_width="141dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/clickpinkbutton"
+        android:checked="false"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/maleButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

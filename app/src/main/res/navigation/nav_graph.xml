@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/hiFragment">
+    app:startDestination="@id/screenSplashFragment">
 
     <fragment
         android:id="@+id/genderFragment"
@@ -12,7 +12,14 @@
         tools:layout="@layout/fragment_gender" >
         <action
             android:id="@+id/action_genderFragment_to_weighMaleFragment"
-            app:destination="@id/weighMaleFragment" />
+            app:destination="@id/weightMaleFragment" />
+        <action
+            android:id="@+id/action_genderFragment_to_weightFemaleFragment"
+            app:destination="@id/weightFemaleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_genderFragment_to_hiFragment"
+            app:destination="@id/hiFragment" />
     </fragment>
     <fragment
         android:id="@+id/hiFragment"
@@ -24,13 +31,16 @@
             app:destination="@id/genderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/weighMaleFragment"
+        android:id="@+id/weightMaleFragment"
         android:name="com.seda.reminderapp.fragment.WeightMaleFragment"
         android:label="fragment_weigh_male"
         tools:layout="@layout/fragment_weight_male" >
         <action
-            android:id="@+id/action_weighMaleFragment_to_weightFemaleFragment"
-            app:destination="@id/weightFemaleFragment" />
+            android:id="@+id/action_weightMaleFragment_to_genderFragment"
+            app:destination="@id/genderFragment" />
+        <action
+            android:id="@+id/action_weightMaleFragment_to_wakeUpMaleFragment"
+            app:destination="@id/wakeUpMaleFragment" />
     </fragment>
     <fragment
         android:id="@+id/weightFemaleFragment"
@@ -38,12 +48,38 @@
         android:label="fragment_weight_female"
         tools:layout="@layout/fragment_weight_female" >
         <action
-            android:id="@+id/action_weightFemaleFragment_to_wakeUpMaleFragment"
-            app:destination="@id/wakeUpMaleFragment" />
+            android:id="@+id/action_weightFemaleFragment_to_wakeUpFemaleFragment"
+            app:destination="@id/wakeUpFemaleFragment" />
+        <action
+            android:id="@+id/action_weightFemaleFragment_to_genderFragment"
+            app:destination="@id/genderFragment" />
     </fragment>
     <fragment
         android:id="@+id/wakeUpMaleFragment"
         android:name="com.seda.reminderapp.fragment.WakeUpMaleFragment"
         android:label="fragment_wake_up_male"
-        tools:layout="@layout/fragment_wake_up_male" />
+        tools:layout="@layout/fragment_wake_up_male" >
+        <action
+            android:id="@+id/action_wakeUpMaleFragment_to_weightMaleFragment"
+            app:destination="@id/weightMaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wakeUpFemaleFragment"
+        android:name="com.seda.reminderapp.fragment.WakeUpFemaleFragment"
+        android:label="fragment_wake_up_female"
+        tools:layout="@layout/fragment_wake_up_female" >
+        <action
+            android:id="@+id/action_wakeUpFemaleFragment_to_weightFemaleFragment"
+            app:destination="@id/weightFemaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenSplashFragment"
+        android:name="com.seda.reminderapp.fragment.ScreenSplashFragment"
+        android:label="fragment_screen_splash"
+        tools:layout="@layout/fragment_screen_splash" >
+        <action
+            android:id="@+id/action_screenSplashFragment_to_hiFragment"
+            app:destination="@id/hiFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>
