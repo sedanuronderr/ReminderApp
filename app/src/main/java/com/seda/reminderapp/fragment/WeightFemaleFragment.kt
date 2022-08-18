@@ -33,7 +33,7 @@ class WeightFemaleFragment : Fragment() {
 
         setupNumberPicker()
         binding.nextbutton2.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.wakeUpFemaleFragment)
+
         }
         binding.back2.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_weightFemaleFragment_to_genderFragment)

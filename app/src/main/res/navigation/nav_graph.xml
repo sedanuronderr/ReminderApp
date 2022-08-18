@@ -19,7 +19,9 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_genderFragment_to_hiFragment"
-            app:destination="@id/hiFragment" />
+            app:destination="@id/hiFragment"
+            app:popUpTo="@id/hiFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/hiFragment"
@@ -37,10 +39,9 @@
         tools:layout="@layout/fragment_weight_male" >
         <action
             android:id="@+id/action_weightMaleFragment_to_genderFragment"
-            app:destination="@id/genderFragment" />
-        <action
-            android:id="@+id/action_weightMaleFragment_to_wakeUpMaleFragment"
-            app:destination="@id/wakeUpMaleFragment" />
+            app:destination="@id/genderFragment"
+            app:popUpTo="@id/genderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/weightFemaleFragment"
@@ -48,29 +49,10 @@
         android:label="fragment_weight_female"
         tools:layout="@layout/fragment_weight_female" >
         <action
-            android:id="@+id/action_weightFemaleFragment_to_wakeUpFemaleFragment"
-            app:destination="@id/wakeUpFemaleFragment" />
-        <action
             android:id="@+id/action_weightFemaleFragment_to_genderFragment"
-            app:destination="@id/genderFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/wakeUpMaleFragment"
-        android:name="com.seda.reminderapp.fragment.WakeUpMaleFragment"
-        android:label="fragment_wake_up_male"
-        tools:layout="@layout/fragment_wake_up_male" >
-        <action
-            android:id="@+id/action_wakeUpMaleFragment_to_weightMaleFragment"
-            app:destination="@id/weightMaleFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/wakeUpFemaleFragment"
-        android:name="com.seda.reminderapp.fragment.WakeUpFemaleFragment"
-        android:label="fragment_wake_up_female"
-        tools:layout="@layout/fragment_wake_up_female" >
-        <action
-            android:id="@+id/action_wakeUpFemaleFragment_to_weightFemaleFragment"
-            app:destination="@id/weightFemaleFragment" />
+            app:destination="@id/genderFragment"
+            app:popUpTo="@id/genderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/screenSplashFragment"

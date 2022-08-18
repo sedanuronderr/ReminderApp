@@ -6,102 +6,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3E18FFFF"
     tools:context=".fragment.WakeUpFemaleFragment">
 
 
     <ImageView
-        android:id="@+id/wakeup3"
-        android:layout_width="214dp"
-        android:layout_height="145dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="49dp"
-        android:src="@drawable/ic_pinkellipse"
-        app:layout_constraintBottom_toBottomOf="@+id/text3"
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_vector_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_vector_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TimePicker
-        android:id="@+id/timePicker1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
-        android:background="@drawable/pinkbutton"
-        android:timePickerMode="spinner"
-        app:layout_constraintBottom_toBottomOf="@+id/imagee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagee"
-        app:layout_constraintTop_toTopOf="@+id/imagee">
-
-    </TimePicker>
-
-    <TextView
-        android:id="@+id/text3"
+    <ImageView
+        android:id="@+id/mavi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="214dp"
-        android:layout_marginEnd="64dp"
-        android:gravity="center"
-        android:text="What time do you wake up"
-        android:textColor="#FF4593"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:src="@drawable/ic_vector_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/nextbutton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/button"
-        android:text="Next"
-        android:textSize="24sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/back3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="51dp"
-        android:layout_marginBottom="26dp"
-        android:background="@drawable/button"
-        android:drawableLeft="@drawable/left"
-        android:textSize="24sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/wakeup4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:src="@drawable/ic_saat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wakeup3" />
-
-    <ImageView
-        android:id="@+id/imagee"
-        android:layout_width="123dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="149dp"
-        android:src="@drawable/ic_female"
-        app:layout_constraintBottom_toTopOf="@+id/back3"
-        app:layout_constraintEnd_toStartOf="@+id/timePicker1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wakeup3" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
