@@ -11,9 +11,6 @@
         android:label="fragment_gender"
         tools:layout="@layout/fragment_gender" >
         <action
-            android:id="@+id/action_genderFragment_to_weighMaleFragment"
-            app:destination="@id/weightMaleFragment" />
-        <action
             android:id="@+id/action_genderFragment_to_weightFemaleFragment"
             app:destination="@id/weightFemaleFragment"
             app:popUpToInclusive="false" />
@@ -22,6 +19,9 @@
             app:destination="@id/hiFragment"
             app:popUpTo="@id/hiFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_genderFragment_to_maleWeightFragment"
+            app:destination="@id/maleWeightFragment" />
     </fragment>
     <fragment
         android:id="@+id/hiFragment"
@@ -33,17 +33,6 @@
             app:destination="@id/genderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/weightMaleFragment"
-        android:name="com.seda.reminderapp.fragment.WeightMaleFragment"
-        android:label="fragment_weigh_male"
-        tools:layout="@layout/fragment_weight_male" >
-        <action
-            android:id="@+id/action_weightMaleFragment_to_genderFragment"
-            app:destination="@id/genderFragment"
-            app:popUpTo="@id/genderFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
         android:id="@+id/weightFemaleFragment"
         android:name="com.seda.reminderapp.fragment.WeightFemaleFragment"
         android:label="fragment_weight_female"
@@ -53,6 +42,9 @@
             app:destination="@id/genderFragment"
             app:popUpTo="@id/genderFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_weightFemaleFragment_to_goalWaterFragment"
+            app:destination="@id/goalWaterFragment" />
     </fragment>
     <fragment
         android:id="@+id/screenSplashFragment"
@@ -63,5 +55,30 @@
             android:id="@+id/action_screenSplashFragment_to_hiFragment"
             app:destination="@id/hiFragment"
             app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalWaterFragment"
+        android:name="com.seda.reminderapp.fragment.GoalWaterFragment"
+        android:label="fragment_goal_water"
+        tools:layout="@layout/fragment_goal_water" >
+        <action
+            android:id="@+id/action_goalWaterFragment_to_hiFragment"
+            app:destination="@id/hiFragment"
+            app:popUpTo="@id/hiFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/maleWeightFragment"
+        android:name="com.seda.reminderapp.fragment.MaleWeightFragment"
+        android:label="fragment_male_weight"
+        tools:layout="@layout/fragment_male_weight" >
+        <action
+            android:id="@+id/action_maleWeightFragment_to_genderFragment"
+            app:destination="@id/genderFragment"
+            app:popUpTo="@id/genderFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_maleWeightFragment_to_goalWaterFragment"
+            app:destination="@id/goalWaterFragment" />
     </fragment>
 </navigation>

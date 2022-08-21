@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.seda.reminderapp.R
 import com.seda.reminderapp.databinding.FragmentWeightFemaleBinding
-import com.seda.reminderapp.databinding.FragmentWeightMaleBinding
 
 class WeightFemaleFragment : Fragment() {
     private lateinit var binding: FragmentWeightFemaleBinding
@@ -23,7 +23,8 @@ class WeightFemaleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentWeightFemaleBinding.inflate(layoutInflater,container,false)
-        return binding.root
+
+       return binding.root
 
     }
 
@@ -33,7 +34,7 @@ class WeightFemaleFragment : Fragment() {
 
         setupNumberPicker()
         binding.nextbutton2.setOnClickListener {
-
+            findNavController().navigate(R.id.goalWaterFragment)
         }
         binding.back2.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_weightFemaleFragment_to_genderFragment)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.seda.reminderapp.R
 
 import com.seda.reminderapp.databinding.FragmentHiBinding
@@ -26,7 +27,6 @@ class HiFragment : Fragment() {
         // Inflate the layout for this fragment
         binding= FragmentHiBinding.inflate(layoutInflater,container,false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class HiFragment : Fragment() {
 
 
             binding.Letsgo.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.genderFragment)
+              findNavController().navigate(R.id.genderFragment)
             }
 
     }

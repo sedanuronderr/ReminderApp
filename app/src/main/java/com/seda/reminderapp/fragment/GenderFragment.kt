@@ -53,13 +53,14 @@ binding.back.setOnClickListener {
     Navigation.findNavController(it).navigate(R.id.action_genderFragment_to_hiFragment)
 
 }
-        melabutton()
+        melabutto()
         femalebutton()
     }
 
-    fun melabutton(){
-
+    fun melabutto(){
         binding.maleButton.setOnCheckedChangeListener(object :View.OnClickListener,CompoundButton.OnCheckedChangeListener{
+
+
             override fun onClick(p0: View?) {
 
             }
@@ -69,7 +70,8 @@ binding.back.setOnClickListener {
 
                     binding.femaleButton.isChecked =false
                     binding.nextbutton.setOnClickListener {
-                        Navigation.findNavController(it).navigate(R.id.weightMaleFragment)
+                        Navigation.findNavController(it).navigate(R.id.maleWeightFragment)
+
                     }
 
                 } else {
@@ -78,6 +80,8 @@ binding.back.setOnClickListener {
             }
 
         })
+
+
 
     }
     fun femalebutton(){

@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.seda.reminderapp.R
-import com.seda.reminderapp.databinding.FragmentWakeUpFemaleBinding
-import com.seda.reminderapp.databinding.FragmentWakeUpMaleBinding
+import com.seda.reminderapp.databinding.FragmentGoalWaterBinding
+
+import com.seda.reminderapp.databinding.FragmentWeightFemaleBinding
 
 
-class WakeUpFemaleFragment : Fragment() {
-    private lateinit var binding: FragmentWakeUpFemaleBinding
+class GoalWaterFragment : Fragment() {
+    private lateinit var binding: FragmentGoalWaterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class WakeUpFemaleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentWakeUpFemaleBinding.inflate(layoutInflater,container,false)
+        binding = FragmentGoalWaterBinding.inflate(layoutInflater,container,false)
         return binding.root
 
     }
@@ -32,8 +33,7 @@ class WakeUpFemaleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.back3.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.weightFemaleFragment)
-        }
+       binding.bottomNavigationView.background = null
+       binding.bottomNavigationView.menu.getItem(2).isEnabled = false
     }
 }
