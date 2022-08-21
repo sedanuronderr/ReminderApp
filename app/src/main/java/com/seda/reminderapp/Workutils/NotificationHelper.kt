@@ -1,4 +1,4 @@
-package com.seda.reminderapp.Utils
+package com.seda.reminderapp.Workutils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -12,7 +12,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.seda.reminderapp.MainActivity
 import com.seda.reminderapp.R
 
-class NotificationHelper(val context:Context) {
+class NotificationHelper(val context: Context) {
 
     private val CHANNEL_ID = "reminder_channel_id"
     private val NOTIFICATION_ID = 1
@@ -27,7 +27,7 @@ class NotificationHelper(val context:Context) {
         }
     }
 
-    fun createNotification(title: String, message: String){
+    fun createNotification(title: String){
         // 1
         createNotificationChannel()
         // 2
@@ -37,13 +37,13 @@ class NotificationHelper(val context:Context) {
         // 3
         val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
         // 4
-        val icon = BitmapFactory.decodeResource(context.resources, R.drawable.reminder_char)
+        val icon = BitmapFactory.decodeResource(context.resources, R.drawable.boywater)
         // 5
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.img)
+            .setSmallIcon(R.drawable.boywater)
             .setLargeIcon(icon)
             .setContentTitle(title)
-            .setContentText(message)
+
             .setStyle(
                 NotificationCompat.BigPictureStyle().bigPicture(icon).bigLargeIcon(null)
             )
