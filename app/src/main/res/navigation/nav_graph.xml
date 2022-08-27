@@ -66,6 +66,9 @@
             app:destination="@id/hiFragment"
             app:popUpTo="@id/hiFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="litre"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/maleWeightFragment"

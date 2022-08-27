@@ -1,6 +1,7 @@
 package com.seda.reminderapp.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,13 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.seda.reminderapp.R
 import com.seda.reminderapp.databinding.FragmentMaleWeightBinding
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 class MaleWeightFragment : Fragment() {
     private lateinit var binding: FragmentMaleWeightBinding
-
+ var kilo :Double =0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,19 +36,31 @@ class MaleWeightFragment : Fragment() {
         binding.back1.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_maleWeightFragment_to_genderFragment)
         }
-        binding.nextbutton1.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.goalWaterFragment)
-        }
+
+
         setupNumberPicker()
+
+
     }
     fun setupNumberPicker() {
         val numberPicker = binding.numberpicker
-        numberPicker.minValue = 0
+        numberPicker.minValue = 35
         numberPicker.maxValue = 200
         numberPicker.wrapSelectorWheel = true
         numberPicker.setOnValueChangedListener { picker, oldVal, newVal ->
             binding.sayi.text = " $newVal  kg"
+          kilo = (newVal.toDouble()* 0.033)
+            val dec = DecimalFormat("#.##")
+            dec.roundingMode = RoundingMode.CEILING
+          kilo(dec.format(kilo))
+        }
+    }
+    fun kilo(Kilo:String){
+        Log.e("kilo","$Kilo")
+        binding.nextbutton1.setOnClickListener {
 
+val action = MaleWeightFragmentDirections.actionMaleWeightFragmentToGoalWaterFragment(Kilo)
+            Navigation.findNavController(it).navigate(action)
         }
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.seda.reminderapp.R
 import com.seda.reminderapp.databinding.FragmentGoalWaterBinding
 
@@ -14,7 +15,7 @@ import com.seda.reminderapp.databinding.FragmentWeightFemaleBinding
 
 class GoalWaterFragment : Fragment() {
     private lateinit var binding: FragmentGoalWaterBinding
-
+    val bundle:GoalWaterFragmentArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,5 +36,10 @@ class GoalWaterFragment : Fragment() {
 
        binding.bottomNavigationView.background = null
        binding.bottomNavigationView.menu.getItem(2).isEnabled = false
+
+        val sayi = bundle.litre
+        binding.litre.text ="${sayi}\n"+"Litre"
+
+
     }
 }
