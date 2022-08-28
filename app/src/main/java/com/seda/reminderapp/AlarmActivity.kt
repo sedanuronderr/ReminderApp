@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
@@ -12,28 +13,62 @@ import java.util.*
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.seda.reminderapp.RecyclerView.recyclerviewalarm
 import com.seda.reminderapp.Worker.ReminderWorker
 import com.seda.reminderapp.databinding.ActivityAlarmBinding
+import com.seda.reminderapp.model.saat
 import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
 
 class AlarmActivity : AppCompatActivity() {
-
+  var saatdata :Int = 0
     var chosenYear = 0
     var chosenMonth = 0
     var chosenDay = 0
     var chosenHour = 0
     var chosenMin = 0
+    private lateinit var alarmAdapter: recyclerviewalarm
     private lateinit var binding: ActivityAlarmBinding
+    private lateinit var saatlist: ArrayList<saat>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =ActivityAlarmBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
-tim()
+prepareRecycler()
 
+        onAlarmLongClickListener()
     }
-    private fun showDateRangePicker(){
+
+    private fun onAlarmLongClickListener() {
+        alarmAdapter.onLongClickListener = {meal->
+
+            Log.e("cer","${meal.saat}")
+           saatdata =meal.saat
+
+
+        }
+        timee(saatdata)
+    }
+    private fun prepareRecycler() {
+
+        saatlist = ArrayList<saat>()
+
+        saatlist.add(0, saat(30,"dk"))
+        saatlist.add(1, saat(60,"dk"))
+        saatlist.add(2, saat(120,"dk"))
+        saatlist.add(3, saat(150,"dk"))
+        saatlist.add(4, saat(180,"dk"))
+        saatlist.add(5, saat(210,"dk"))
+     alarmAdapter = recyclerviewalarm(this,saatlist)
+        binding.recyclerView.apply {
+            layoutManager =  LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+            adapter =alarmAdapter
+        }
+    }
+
+    private fun showDateRangePicker() {
         val dateRangePicker =
             MaterialDatePicker
                 .Builder.dateRangePicker()
@@ -45,25 +80,20 @@ tim()
             supportFragmentManager,
             "date_range_picker"
         )
-        dateRangePicker.addOnPositiveButtonClickListener { datePicked->
+        dateRangePicker.addOnPositiveButtonClickListener { datePicked ->
             val startDate = datePicked.first
             val endDate = datePicked.second
 
 
-            if(startDate != null && endDate != null){
-             binding.tvRangeDate.text =
-                 "Reserved\nStartDate: ${convertLongToTime(startDate)}\n" +
-                         "EndDate: ${convertLongToTime(endDate)}"
+            if (startDate != null && endDate != null) {
+
 
             }
 
+
         }
-
-
-
-
     }
-    private fun convertLongToTime(time: Long): String {
+     fun convertLongToTime(time: Long): String {
         val date = Date(time)
         val format = SimpleDateFormat(
             "dd.MM.yyyy",
@@ -72,7 +102,7 @@ tim()
         return format.format(date)
     }
 
-    fun tim(){
+  private  fun timee(saatt :Int){
         val today = Calendar.getInstance()
 
 
@@ -91,7 +121,6 @@ tim()
                     }
                     else -> am_pm = "AM"
                 }
-                Log.e("time is","$chosenHour : $minute $am_pm")
 
             }
             // check for single digit hour hour and minute
@@ -106,14 +135,14 @@ tim()
         val todayDateTime = Calendar.getInstance()
         Log.e("time","${todayDateTime.get(Calendar.HOUR)}")
         Log.e("time","${todayDateTime.get(Calendar.MINUTE)}")
-        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong())
+        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong() + saatt)
         createWorkRequest("merhaba", delayInSeconds)
-        Log.e("delay","$delayInSeconds")
+        Log.e("delay","$saatt")
 
         }
 
 
-    private fun createWorkRequest(message: String,timeDelayInSeconds: Long  ) {
+     fun createWorkRequest(message: String,timeDelayInSeconds: Long  ) {
         val myWorkRequest = OneTimeWorkRequestBuilder<ReminderWorker>()
             .setInitialDelay(timeDelayInSeconds, TimeUnit.MINUTES)
             .setInputData(

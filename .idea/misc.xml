@@ -34,12 +34,13 @@
         <entry key="..\:/ReminderApp/app/src/main/res/drawable/pinkbutton.xml" value="0.2595" />
         <entry key="..\:/ReminderApp/app/src/main/res/drawable/raw.xml" value="0.2595" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_al_armactivity.xml" value="0.25416666666666665" />
-        <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_alarm.xml" value="0.1" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_alarm.xml" value="0.2" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/cardview.xml" value="0.1" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_alarm.xml" value="0.22282608695652173" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_gender.xml" value="0.16" />
-        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_goal_water.xml" value="0.4" />
+        <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_goal_water.xml" value="0.176" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_heigh.xml" value="0.25416666666666665" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_hi.xml" value="0.24728260869565216" />
         <entry key="..\:/ReminderApp/app/src/main/res/layout/fragment_male_weight.xml" value="0.12360688956433637" />

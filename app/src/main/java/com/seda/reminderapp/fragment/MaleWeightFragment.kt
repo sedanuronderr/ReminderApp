@@ -56,7 +56,6 @@ class MaleWeightFragment : Fragment() {
         }
     }
     fun kilo(Kilo:String){
-        Log.e("kilo","$Kilo")
         binding.nextbutton1.setOnClickListener {
 
 val action = MaleWeightFragmentDirections.actionMaleWeightFragmentToGoalWaterFragment(Kilo)

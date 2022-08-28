@@ -40,6 +40,9 @@ class GoalWaterFragment : Fragment() {
         val sayi = bundle.litre
         binding.litre.text ="${sayi}\n"+"Litre"
 
+        binding.fabalarm.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.alarmActivity)
+        }
 
     }
 }
