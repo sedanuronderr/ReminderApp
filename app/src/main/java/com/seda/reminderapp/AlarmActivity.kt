@@ -68,31 +68,7 @@ prepareRecycler()
         }
     }
 
-    private fun showDateRangePicker() {
-        val dateRangePicker =
-            MaterialDatePicker
-                .Builder.dateRangePicker()
-                .setTitleText("Select Date")
 
-                .build()
-
-        dateRangePicker.show(
-            supportFragmentManager,
-            "date_range_picker"
-        )
-        dateRangePicker.addOnPositiveButtonClickListener { datePicked ->
-            val startDate = datePicked.first
-            val endDate = datePicked.second
-
-
-            if (startDate != null && endDate != null) {
-
-
-            }
-
-
-        }
-    }
      fun convertLongToTime(time: Long): String {
         val date = Date(time)
         val format = SimpleDateFormat(
@@ -103,7 +79,7 @@ prepareRecycler()
     }
 
   private  fun timee(saatt :Int){
-        val today = Calendar.getInstance()
+
 
 
 
