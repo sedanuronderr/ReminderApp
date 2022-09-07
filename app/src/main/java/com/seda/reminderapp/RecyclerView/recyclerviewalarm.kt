@@ -44,6 +44,7 @@ class recyclerviewalarm(val context: Context, val saatbilgi:ArrayList<saat>): Re
 
             cardAlarm.setOnClickListener {
                 Toast.makeText(context,"${current.saat} dk sonra alarm çalacak",Toast.LENGTH_SHORT).show()
+                onLongClickListener?.let { it1 -> it1(saatbilgi.get(position))}
             }
 
        }
@@ -52,6 +53,8 @@ class recyclerviewalarm(val context: Context, val saatbilgi:ArrayList<saat>): Re
         }
 
     }
+
+
 
     override fun getItemCount(): Int {
 

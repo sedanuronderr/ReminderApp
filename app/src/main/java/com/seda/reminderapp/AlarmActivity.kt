@@ -19,9 +19,10 @@ import com.seda.reminderapp.databinding.ActivityAlarmBinding
 import com.seda.reminderapp.model.saat
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
+import kotlin.properties.Delegates
 
 class AlarmActivity : AppCompatActivity() {
-  var saatdata :Int = 0
+  private var saatdata =0
     var chosenYear = 0
     var chosenMonth = 0
     var chosenDay = 0
@@ -41,16 +42,7 @@ prepareRecycler()
         onAlarmLongClickListener()
     }
 
-    private fun onAlarmLongClickListener() {
-        alarmAdapter.onLongClickListener = {meal->
 
-            Log.e("cer","${meal.saat}")
-           saatdata =meal.saat
-
-
-        }
-        timee(saatdata)
-    }
     private fun prepareRecycler() {
 
         saatlist = ArrayList<saat>()
@@ -67,7 +59,18 @@ prepareRecycler()
             adapter =alarmAdapter
         }
     }
+    private fun onAlarmLongClickListener() {
+        alarmAdapter.onLongClickListener = {meal->
 
+            Log.e("cer","${meal.saat}")
+            saatdata =meal.saat
+            Log.e("saat","$saatdata")
+            timee(saatdata)
+
+        }
+
+
+    }
 
      fun convertLongToTime(time: Long): String {
         val date = Date(time)
@@ -111,7 +114,7 @@ prepareRecycler()
         val todayDateTime = Calendar.getInstance()
         Log.e("time","${todayDateTime.get(Calendar.HOUR)}")
         Log.e("time","${todayDateTime.get(Calendar.MINUTE)}")
-        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong() + saatt)
+        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong() + 3)
         createWorkRequest("merhaba", delayInSeconds)
         Log.e("delay","$saatt")
 
