@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import androidx.work.workDataOf
+import androidx.work.*
 import java.text.SimpleDateFormat
 import java.util.*
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -112,17 +110,17 @@ prepareRecycler()
 
 
         val todayDateTime = Calendar.getInstance()
-        Log.e("time","${todayDateTime.get(Calendar.HOUR)}")
-        Log.e("time","${todayDateTime.get(Calendar.MINUTE)}")
-        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong() + 3)
+        Log.e("hour","${todayDateTime.get(Calendar.HOUR)}")
+        Log.e("minute","${todayDateTime.get(Calendar.MINUTE)}")
+        val delayInSeconds =(userSelectedDateTime.get(Calendar.MINUTE).toLong() + saatt)
         createWorkRequest("merhaba", delayInSeconds)
-        Log.e("delay","$saatt")
+        Log.e("delay","$delayInSeconds")
 
         }
 
 
      fun createWorkRequest(message: String,timeDelayInSeconds: Long  ) {
-        val myWorkRequest = OneTimeWorkRequestBuilder<ReminderWorker>()
+        val myWorkRequest =  PeriodicWorkRequestBuilder<ReminderWorker>(timeDelayInSeconds, TimeUnit.MINUTES )
             .setInitialDelay(timeDelayInSeconds, TimeUnit.MINUTES)
             .setInputData(
                 workDataOf(
