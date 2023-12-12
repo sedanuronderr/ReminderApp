@@ -1,5 +1,5 @@
 # ReminderApp
-## Fragment,Work Manager,View Binding teknolojileri kullanıldı.
+## Fragment,Work Manager,View Binding Jetpack libraries were used in the project.
 
 <table>
    
